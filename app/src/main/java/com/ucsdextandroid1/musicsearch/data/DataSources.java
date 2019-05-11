@@ -35,16 +35,12 @@ public class DataSources {
         Gson gson = new GsonBuilder()
                 //type adapter is custom instructions on how to parse certain classes
                 .registerTypeAdapter(ItunesSearchResults.class, new ItunesSearchResultsDeserialzer())
-                //exclusion strategy allows us to remove things from the json that we don't want
-                //so this one says when turing classes into json skip any fields with the annotation
-                //@RemoveFromJson
                 .create();
 
-
-        //TODO use retrofit to create an instance of the itunesApi
+     //TODO use retrofit to create an instance of the itunesApi
         this.dataApi = new Retrofit.Builder()
                 .baseUrl("https://itunes.apple.com")
-                .addConverterFactory(GsonConverterFactory.create(gson)) //in class 5 we added our custom gson here
+                .addConverterFactory(GsonConverterFactory.create(gson)) 
                 .build()
                 .create(ItunesApi.class);
     }
