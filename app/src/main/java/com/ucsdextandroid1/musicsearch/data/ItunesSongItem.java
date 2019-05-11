@@ -8,40 +8,63 @@ import com.google.gson.annotations.SerializedName;
 public class ItunesSongItem implements SongItem {
 
     //TODO add all the members to this class with proper serialized names
+    @SerializedName("trackId")
+    private long trackId;
+
+    @SerializedName("trackName")
+    private String trackName;
+
+    @SerializedName("artistId")
+    private String artistId;
+
+    @SerializedName("artistName")
+    private String artistName;
+
+    @SerializedName("collectionName")
+    private String  collectionName;
+
+    @SerializedName("artworkUrl100")
+    private String  artworkUrl100;
+
+    @SerializedName("previewUrl")
+    private String  previewUrl;
+
+    @SerializedName("trackTimeMillis")
+    private long trackTimeMillis;
 
     @Override
     public long getTrackId() {
-        return 0;
+        return trackId;
     }
 
     @Override
     public String getTrackName() {
-        return null;
+        return trackName;
     }
 
     @Override
     public String getArtistName() {
-        return null;
+        return artistName;
     }
 
     @Override
     public String getAlbumName() {
-        return null;
+        return collectionName;
     }
 
     @Override
     public String getArtworkUrl() {
-        return null;
+        return artworkUrl100;
     }
 
     @Override
     public String getPreviewUrl() {
-        return null;
+        return previewUrl;
     }
 
     @Override
     public long getTrackTime() {
-        return 0;
+        return trackTimeMillis;
     }
 
 }
